@@ -1,4 +1,4 @@
-require ("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -39,6 +39,10 @@ app.use("/api/answer", reactionRoute);
 
 // comment route middleware
 app.use("/api/answer", commentRoute);
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 async function start() {
   try {
